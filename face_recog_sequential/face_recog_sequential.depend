@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1672693856 source:c:\users\raikibul.hasan\documents\github\face_rec_openmpi\face_recog_sequential\main.cpp
+	<bits/stdc++.h>
+	<string.h>
+	<stdlib.h>
+	<dirent.h>
+	<math.h>
+	<limits.h>
+	<sys/time.h>
+
