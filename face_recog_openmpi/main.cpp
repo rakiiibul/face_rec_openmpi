@@ -339,19 +339,22 @@ int main(int * argc, char **argv) {
     int img_height = 180;
     int bin_count = 255;
 
+
     char * img_dir = "./images";
 
     // allocate a 3d array to hold histograms for training and test set images.
     int *** training_set_histograms = (int***)malloc(num_person * sizeof(int**));
     int *** test_set_histograms =(int***) malloc(num_person * sizeof(int**));
     int i;
-
+    //int set_thr= 14;
     //------------------------------------------ end of first sequential segment
     gettimeofday(&sequential_end_1, NULL);
-
+    //omp_set_num_threads(set_thr);
     //------------------------------------------ beginning of first parallel segment
     gettimeofday(&parallel_begin_1, NULL);
     #pragma omp parallel for shared(num_person, training_set_histograms, test_set_histograms, k, bin_count), default(none)
+
+
     for( i = 0; i < num_person; i++) {
         training_set_histograms[i] = alloc_2d_matrix(k, bin_count);
         test_set_histograms[i] = alloc_2d_matrix(20 - k, bin_count);
@@ -432,6 +435,15 @@ int main(int * argc, char **argv) {
     gettimeofday(&sequential_end_3, NULL);
     sequential_time += (sequential_end_3.tv_sec - sequential_begin_3.tv_sec) * 1000 + (sequential_end_3.tv_usec - sequential_begin_3.tv_usec)/1000;
 
+
+
+    //cout<<"Totall number of threads use for complete all of the partS:"<<x<<endl;
+    cout<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl;
+    cout<<"*****Parallel Implementation*******"<<endl;
+    cout<<"*****Face Recognition system*******"<<endl;
+    cout<<"*****LOCAL BINARY PATTERN********"<<endl<<endl;
+    cout<<"Number of Traning set: 1"<<endl;
+    //cout<<"Number of threads:"<<set_thr<<endl;
     printf("Parallel time: %f ms\n", parallel_time);
     //printf("Sequential time: %f ms\n", sequential_time);
 

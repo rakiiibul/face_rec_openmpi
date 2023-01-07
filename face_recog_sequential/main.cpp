@@ -310,9 +310,9 @@ int main(int * argc, char **argv) {
 
     struct timeval begin, end;
     gettimeofday(&begin, NULL);
+    int trainset=5;
 
-
-    int k = atoi(argv[1]); // k is the number of training set images, and 20 > k > 0
+    int k = atoi(argv[trainset]); // k is the number of training set images, and 20 > k > 0
 
     // following variables are self-explanatory
     int num_person = 18;
@@ -342,6 +342,7 @@ int main(int * argc, char **argv) {
 
     for (cur_person_id = 1; cur_person_id <= num_person; cur_person_id++) {
         for (cur_img_id = 1; cur_img_id <= img_per_person; cur_img_id++ ) {
+
 
             sprintf(abs_file_path, "%s/%d.%d.txt", img_dir, cur_person_id, cur_img_id);
             cur_img = read_pgm_file(abs_file_path, img_height, img_width);
@@ -378,8 +379,11 @@ int main(int * argc, char **argv) {
 
     gettimeofday(&end, NULL);
     double seq_time = (end.tv_sec - begin.tv_sec) * 1000 + (end.tv_usec - begin.tv_usec)/1000;
-
-    printf("Sequential time: %f ms\n", seq_time);
+    cout<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl;
+    cout<<"*****Face Recognition system*******"<<endl;
+    cout<<"*****LOCAL BINARY PATTERN********"<<endl<<endl;
+    cout<<"Number of Traning set:"<<trainset<<endl;
+    printf("Execution Time for Sequential Implementation: %f ms\n", seq_time);
     //printf("Parallel time: 00.00 ms\n");
 
     return 0;
