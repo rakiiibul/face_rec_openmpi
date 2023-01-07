@@ -67,7 +67,7 @@ Feature</a>
 
 ## About The Project
 
-<img src="img/background.jpeg" alt="SPA"></a>
+<img src="img/background.jpeg" alt=""></a>
 
 ### Context
 
@@ -92,7 +92,7 @@ Feature</a>
 
 ### Built With
 
--   [R](https://www.r-project.org/)
+-   [C++](https://isocpp.org/)
 
     <p align="right">
 
