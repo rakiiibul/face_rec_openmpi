@@ -15,7 +15,7 @@ Face recognition With Open_MPI
 
 <p align="center">
 
-with R Program Language <br />\
+with C++ Programing Language <br />\
 <a href="https://github.com/rakiiibul/face_rec_openmpi/issues">Report
 Bug</a> ·
 <a href="https://github.com/rakiiibul/face_rec_openmpi/issues">Request
