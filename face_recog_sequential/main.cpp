@@ -3,7 +3,7 @@
 title: face recognition with openmpi
 author: Raikibul Hasan
 course:Parallel and Grid computing
-date: 18 dec 2020
+date: 18 dec 2022
 */
 #include <bits/stdc++.h>
 #include <string.h>
